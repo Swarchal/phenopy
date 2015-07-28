@@ -27,6 +27,4 @@ def num_to_well_single(num, plate = 96L):
 
 	return str(comb_array[number,0]) + str(comb_array[number,1])
 
-num_to_well = np.vectorize(num_to_well_single)
-
-print num_to_well(range(1, 385), plate = 384)
+num_to_well = np.vectorize(num_to_well_single) # need to sort this out
