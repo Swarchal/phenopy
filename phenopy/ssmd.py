@@ -1,3 +1,4 @@
+from __future__ import division
 from numpy import mean, var, cov, sqrt
 
 def ssmd(a, b):
@@ -8,8 +9,7 @@ def ssmd(a, b):
 	mu_b = mean(b)
 	var_a = var(a)
 	var_b = var(b)
-	cov_ab = cov([a, b])
-
-	beta = (mu_a - mu_b) / math.sqrt(var_a + var_b - 2 * cov_ab)
-
+	cov_ab = cov(a, b)[0][1]
+	alpha = var_a + var_b - 2 * cov_ab
+	beta = (mu_a - mu_b) / sqrt(alpha)
 	return(beta)
