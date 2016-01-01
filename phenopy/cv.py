@@ -30,13 +30,3 @@ def cv_check(data, group):
 	cv_data = data_grouped.apply(cv)
 
 	return cv_data
-
-
-# checks
-df = pd.DataFrame({
-  'v1':  [1,3,5,7,8,3,5,4,4,5,7,9],
-  'v2':  [4,3,3,3,4,6,3,4,3,3,3,5],
-  'by1': ['a', 'a', 'b', 'a', 'a', 'b', 'b', 'a', 'b', 'a', 'b', 'a']
-})
-
-print cv_check(df.ix[:,0], 'by1')
