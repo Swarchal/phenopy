@@ -9,11 +9,11 @@ def num_to_well(num, plate = 96L):
 		"""
 		Converts well numbers into alpha-numeric well IDs
 		"""
-	
+
 		number = num -1 # removes 0 indexing issues
 	
 		if num > plate:
-			return "Error: well number greater than wells in plate"
+			raise ValueError("Well number exceeds number of wells in plate")
 	
 		if plate == 96:
 			rows = uppercase[0:8]
